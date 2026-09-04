@@ -1,0 +1,62 @@
+/* 
+  ============================================================
+  PREMIUM CINEMATIC TYPOGRAPHY
+  Source: Google Fonts
+  ============================================================
+  
+  4 Distinct Font Families for Clear Visual Hierarchy:
+  1. Headings (Hero / Display) : 'Syne' (Bold, editorial, geometric display)
+  2. Sections (Section Titles) : 'Outfit' (Modern, confident, sleek sans-serif)
+  3. Labels (Tags, Metadata)   : 'Space Mono' (Technical, precise monospace)
+  4. Body Text (Paragraphs)    : 'Inter' (Ultra-readable, clean modern sans)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@500;600;700;800&display=swap');
+
+:root {
+  /* Font Family Tokens */
+  --font-headings: 'Syne', sans-serif;
+  --font-sections: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-labels: 'Space Mono', monospace;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ============================================================
+   Typography Utility Classes
+   ============================================================ */
+
+/* 1. Hero & Major Headings */
+.font-headings,
+.font-heading {
+  font-family: var(--font-headings);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+/* 2. Section Headings */
+.font-sections,
+.font-section {
+  font-family: var(--font-sections);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+/* 3. Small Labels, Metadata, Tags & Numbers */
+.font-labels,
+.font-label {
+  font-family: var(--font-labels);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+}
+
+/* 4. Body Copy & Paragraphs */
+.font-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+}

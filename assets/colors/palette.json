@@ -1,0 +1,34 @@
+{
+  "themeName": "Cinematic Portfolio",
+  "colors": {
+    "bg": {
+      "primary": "#090807",
+      "secondary": "#12100D",
+      "soft": "#1B1712"
+    },
+    "text": {
+      "primary": "#F3EEE5",
+      "secondary": "#C7C0B5",
+      "muted": "#8E887E"
+    },
+    "border": {
+      "default": "#3A332B",
+      "light": "#5A4D3E"
+    },
+    "accent": {
+      "champagne": "#D9A85B",
+      "champagneLight": "#E8C58F",
+      "champagneDark": "#9B713B"
+    },
+    "neutral": {
+      "white": "#FFFFFF",
+      "black": "#000000"
+    }
+  },
+  "typography": {
+    "headings": "Syne, sans-serif",
+    "sections": "Outfit, sans-serif",
+    "labels": "Space Mono, monospace",
+    "body": "Inter, sans-serif"
+  }
+}

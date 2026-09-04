@@ -1,0 +1,32 @@
+/* 
+  ============================================================
+  PREMIUM CINEMATIC DESIGN SYSTEM MASTER THEME
+  Imports:
+    1. fonts/fonts.css (Typography: Syne, Outfit, Space Mono, Inter)
+    2. colors/colors.css (Color Palette: Near-black, Ivory, Champagne)
+  ============================================================
+*/
+
+@import url('./fonts/fonts.css');
+@import url('./colors/colors.css');
+@import url('./backgrounds/backgrounds.css');
+
+/* Global default baseline */
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text-primary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

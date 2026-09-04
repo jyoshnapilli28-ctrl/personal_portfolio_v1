@@ -1,0 +1,202 @@
+/* 
+  ============================================================
+  PREMIUM CINEMATIC BACKGROUND SYSTEM
+  ============================================================
+  
+  Visual Direction:
+  Dark, cinematic, futuristic, minimal, technical, sophisticated.
+  
+  Layers:
+  1. Base Color (#090807) & Ambient Radial Gradients
+  2. Technical Faint Grid / Matrix (Ultra-low opacity SVG/CSS)
+  3. Fine-Grain Organic Texture (Prevents banding, adds tactile depth)
+  4. Subtle Atmospheric Light Zones (Hero backlight, Section separation)
+  5. Cinematic Vignette (Edge falloff)
+  6. Glass UI Card Surface Backings
+*/
+
+:root {
+  /* Ambient glow coordinates & colors */
+  --glow-hero: radial-gradient(
+    ellipse 60% 50% at 75% 40%,
+    rgba(217, 168, 91, 0.08) 0%,
+    rgba(217, 168, 91, 0.03) 45%,
+    transparent 75%
+  );
+
+  --glow-section: radial-gradient(
+    ellipse 50% 40% at 20% 50%,
+    rgba(217, 168, 91, 0.05) 0%,
+    transparent 65%
+  );
+
+  --vignette-cinematic: radial-gradient(
+    circle at 50% 50%,
+    transparent 55%,
+    rgba(0, 0, 0, 0.5) 85%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+
+  /* Subtle technical grid pattern */
+  --tech-grid: linear-gradient(to right, rgba(243, 238, 229, 0.02) 1px, transparent 1px),
+               linear-gradient(to bottom, rgba(243, 238, 229, 0.02) 1px, transparent 1px);
+}
+
+/* ============================================================
+   1. Master Page Background Environment
+   ============================================================ */
+.cinematic-bg-root,
+body.cinematic-environment {
+  background-color: var(--color-bg-primary, #090807);
+  background-image: 
+    var(--vignette-cinematic),
+    radial-gradient(circle at 50% 0%, rgba(217, 168, 91, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 100% 60%, rgba(27, 23, 18, 0.9) 0%, transparent 60%),
+    radial-gradient(circle at 0% 100%, rgba(18, 16, 13, 0.9) 0%, transparent 60%);
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   2. Hero Section Background (Atmospheric & Portrait-Ready)
+   ============================================================ */
+.hero-background-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  background-color: var(--color-bg-primary, #090807);
+  background-image: 
+    var(--glow-hero),
+    radial-gradient(ellipse 40% 40% at 80% 35%, rgba(232, 197, 143, 0.06) 0%, transparent 60%),
+    linear-gradient(180deg, transparent 0%, rgba(9, 8, 7, 0.9) 85%, #090807 100%);
+}
+
+/* Hero Section with Photographic Cinematic Backdrop */
+.hero-background-photo {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(90deg, #090807 0%, rgba(9, 8, 7, 0.75) 45%, rgba(9, 8, 7, 0.4) 100%),
+    linear-gradient(180deg, transparent 60%, #090807 100%),
+    url('../images/hero_cinematic_bg.jpg');
+  background-size: cover;
+  background-position: center right;
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============================================================
+   3. Subtle Fine-Grain Noise Texture (SVG Data URI)
+   ============================================================ */
+.bg-noise-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+/* ============================================================
+   4. Faint Architectural / Technical Grid
+   ============================================================ */
+.bg-tech-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-size: 80px 80px;
+  background-image: var(--tech-grid);
+  mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 20%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 20%, transparent 80%);
+  opacity: 0.5;
+}
+
+/* ============================================================
+   5. Portrait Separation Aura (Behind 3D / Portrait Avatar)
+   ============================================================ */
+.portrait-aura-glow {
+  position: absolute;
+  width: 500px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(217, 168, 91, 0.12) 0%,
+    rgba(217, 168, 91, 0.04) 40%,
+    transparent 70%
+  );
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ============================================================
+   6. Glassmorphic UI Card & Panel Support
+   ============================================================ */
+.glass-panel {
+  background: rgba(27, 23, 18, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(58, 51, 43, 0.65);
+  box-shadow: 
+    0 4px 24px -1px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(243, 238, 229, 0.05);
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-panel:hover {
+  border-color: rgba(90, 77, 62, 0.85);
+  box-shadow: 
+    0 8px 32px -2px rgba(0, 0, 0, 0.6),
+    0 0 16px rgba(217, 168, 91, 0.05),
+    inset 0 1px 0 rgba(232, 197, 143, 0.12);
+}
+
+/* Secondary subtle floating card */
+.glass-card-subtle {
+  background: rgba(18, 16, 13, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(58, 51, 43, 0.45);
+}
+
+/* ============================================================
+   7. Responsive & Mobile Performance Optimization
+   ============================================================ */
+@media (max-width: 768px) {
+  .hero-background-layer {
+    background-image: 
+      radial-gradient(circle at 80% 30%, rgba(217, 168, 91, 0.06) 0%, transparent 60%),
+      linear-gradient(180deg, transparent 0%, #090807 90%);
+  }
+
+  .bg-noise-overlay {
+    opacity: 0.018; /* Lighter noise on mobile GPUs */
+  }
+
+  .portrait-aura-glow {
+    width: 320px;
+    height: 380px;
+    filter: blur(25px);
+  }
+
+  .glass-panel {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}
+
+/* High contrast & reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .glass-panel {
+    transition: none;
+  }
+}

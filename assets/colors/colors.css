@@ -1,0 +1,122 @@
+/* 
+  ============================================================
+  PREMIUM CINEMATIC COLOR PALETTE
+  Source: docs/color-palette.md
+  ============================================================
+  
+  Visual Rule:
+  Near-black background + warm ivory typography + 
+  small champagne accents + warm photographic lighting.
+*/
+
+:root {
+  /* Core Background System */
+  --color-bg-primary: #090807;       /* Main page background (dominates 70-80%) */
+  --color-bg-secondary: #12100D;     /* Alternate sections / panels */
+  --color-bg-soft: #1B1712;          /* Cards, subtle surfaces, floating UI */
+
+  /* Typography Colors */
+  --color-text-primary: #F3EEE5;     /* Warm ivory: Hero name, major headings */
+  --color-text-secondary: #C7C0B5;   /* Warm gray: Body copy, descriptions */
+  --color-text-muted: #8E887E;       /* Muted: Metadata, section numbers, labels */
+
+  /* Borders & Dividers */
+  --color-border: #3A332B;           /* Subtle structural borders */
+  --color-border-light: #5A4D3E;     /* Hover & focus borders */
+
+  /* Restrained Champagne / Gold Accents (<= 5% usage) */
+  --color-accent: #D9A85B;           /* Primary gold/champagne accent */
+  --color-accent-light: #E8C58F;     /* Accent hover & fine decorative lines */
+  --color-accent-dark: #9B713B;      /* Secondary deeper accent */
+
+  /* Pure Accents & Overlays */
+  --color-white: #FFFFFF;            /* High-contrast text when required */
+  --color-black: #000000;            /* Deep shadow overlays */
+
+  /* Ambient Lighting & Overlays */
+  --gradient-ambient-glow: radial-gradient(
+    circle at 70% 40%,
+    rgba(217, 168, 91, 0.10),
+    transparent 40%
+  );
+  --gradient-portrait-overlay: linear-gradient(
+    90deg,
+    rgba(9, 8, 7, 0.95) 0%,
+    rgba(9, 8, 7, 0.45) 45%,
+    rgba(9, 8, 7, 0.10) 100%
+  );
+}
+
+/* ============================================================
+   Background Utility Classes
+   ============================================================ */
+.bg-cinematic {
+  background-color: var(--color-bg-primary);
+}
+
+.bg-cinematic-secondary {
+  background-color: var(--color-bg-secondary);
+}
+
+.bg-cinematic-soft {
+  background-color: var(--color-bg-soft);
+}
+
+/* ============================================================
+   Typography Color Utility Classes
+   ============================================================ */
+.text-ivory {
+  color: var(--color-text-primary);
+}
+
+.text-warm-gray {
+  color: var(--color-text-secondary);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+/* ============================================================
+   Border Utility Classes
+   ============================================================ */
+.border-cinematic {
+  border-color: var(--color-border);
+}
+
+.border-cinematic-light {
+  border-color: var(--color-border-light);
+}
+
+/* ============================================================
+   Accent Color & Highlight Utility Classes
+   ============================================================ */
+.accent-champagne,
+.text-champagne {
+  color: var(--color-accent);
+}
+
+.bg-champagne {
+  background-color: var(--color-accent);
+}
+
+.accent-champagne-light,
+.text-champagne-light {
+  color: var(--color-accent-light);
+}
+
+.accent-champagne-dark,
+.text-champagne-dark {
+  color: var(--color-accent-dark);
+}
+
+/* ============================================================
+   Atmospheric Gradients & Overlays
+   ============================================================ */
+.ambient-glow {
+  background-image: var(--gradient-ambient-glow);
+}
+
+.overlay-portrait {
+  background-image: var(--gradient-portrait-overlay);
+}
