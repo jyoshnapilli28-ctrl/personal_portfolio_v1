@@ -1,0 +1,36 @@
+@import '../../assets/theme.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Selection color */
+::selection {
+  background-color: rgba(217, 168, 91, 0.3);
+  color: #F3EEE5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090807;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3A332B;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5A4D3E;
+}
